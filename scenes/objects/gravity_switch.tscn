@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/gravity_switch.gd" id="1_xr4hw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybfct"]
+size = Vector2(40, 50)
+
+[node name="GravitySwitch" type="Area2D" unique_id=1391495434]
+script = ExtResource("1_xr4hw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384280963]
+shape = SubResource("RectangleShape2D_ybfct")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=659909223]
+
+[node name="Pillar" type="ColorRect" parent="Visuals" unique_id=1503237336]
+offset_left = -12.0
+offset_top = -20.0
+offset_right = 12.0
+offset_bottom = 20.0
+color = Color(0.25, 0.28, 0.35, 1)
+
+[node name="Glow" type="ColorRect" parent="Visuals" unique_id=278220206]
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 8.0
+color = Color(0.4, 0.2, 0.05, 1)

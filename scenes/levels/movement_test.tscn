@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://ds10ypswvldvm"]
+
+[ext_resource type="Script" uid="uid://dvs72j85dslwv" path="res://scripts/movement_test.gd" id="1_a845j"]
+[ext_resource type="PackedScene" path="res://scenes/players/player_raka.tscn" id="2_s0blp"]
+[ext_resource type="PackedScene" path="res://scenes/players/player_nisa.tscn" id="4_ferib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddkq2"]
+size = Vector2(1280, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y81om"]
+size = Vector2(40, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xwjw"]
+size = Vector2(40, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgygo"]
+size = Vector2(200, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igkj5"]
+size = Vector2(200, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpe54"]
+size = Vector2(200, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvgif"]
+size = Vector2(24, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oodfx"]
+size = Vector2(24, 40)
+
+[node name="MovementTest" type="Node2D" unique_id=680362049]
+script = ExtResource("1_a845j")
+
+[node name="Environment" type="Node2D" parent="." unique_id=1871070320]
+
+[node name="Background" type="ColorRect" parent="Environment" unique_id=2104080787]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.12, 0.16, 0.2, 1)
+
+[node name="Ground" type="StaticBody2D" parent="Environment" unique_id=1605161689]
+position = Vector2(640, 700)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground" unique_id=955905330]
+shape = SubResource("RectangleShape2D_ddkq2")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Ground" unique_id=1326493637]
+offset_left = -640.0
+offset_top = -20.0
+offset_right = 640.0
+offset_bottom = 20.0
+color = Color(0.18, 0.32, 0.24, 1)
+
+[node name="LeftWall" type="StaticBody2D" parent="Environment" unique_id=1932976405]
+position = Vector2(20, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/LeftWall" unique_id=2025053786]
+shape = SubResource("RectangleShape2D_y81om")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/LeftWall" unique_id=183930592]
+offset_left = -20.0
+offset_top = -360.0
+offset_right = 20.0
+offset_bottom = 360.0
+color = Color(0.15, 0.22, 0.2, 1)
+
+[node name="RightWall" type="StaticBody2D" parent="Environment" unique_id=1531246614]
+position = Vector2(1260, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RightWall" unique_id=296701943]
+shape = SubResource("RectangleShape2D_2xwjw")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/RightWall" unique_id=1854014183]
+offset_left = -20.0
+offset_top = -360.0
+offset_right = 20.0
+offset_bottom = 360.0
+color = Color(0.15, 0.22, 0.2, 1)
+
+[node name="PlatformLow" type="StaticBody2D" parent="Environment" unique_id=1230355534]
+position = Vector2(300, 540)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformLow" unique_id=2143397437]
+shape = SubResource("RectangleShape2D_xgygo")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/PlatformLow" unique_id=669277596]
+offset_left = -100.0
+offset_top = -12.0
+offset_right = 100.0
+offset_bottom = 12.0
+color = Color(0.25, 0.45, 0.35, 1)
+
+[node name="PlatformMid" type="StaticBody2D" parent="Environment" unique_id=364887710]
+position = Vector2(600, 430)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformMid" unique_id=1293512167]
+shape = SubResource("RectangleShape2D_igkj5")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/PlatformMid" unique_id=991779782]
+offset_left = -100.0
+offset_top = -12.0
+offset_right = 100.0
+offset_bottom = 12.0
+color = Color(0.25, 0.45, 0.35, 1)
+
+[node name="PlatformHigh" type="StaticBody2D" parent="Environment" unique_id=1287531592]
+position = Vector2(900, 320)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformHigh" unique_id=1925446619]
+shape = SubResource("RectangleShape2D_cpe54")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/PlatformHigh" unique_id=1489478933]
+offset_left = -100.0
+offset_top = -12.0
+offset_right = 100.0
+offset_bottom = 12.0
+color = Color(0.25, 0.45, 0.35, 1)
+
+[node name="PlayerRaka" parent="." unique_id=534366632 instance=ExtResource("2_s0blp")]
+position = Vector2(200, 660)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerRaka" unique_id=1329514394]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_hvgif")
+
+[node name="Visuals2" type="Node2D" parent="PlayerRaka" unique_id=707944933]
+
+[node name="GauntletLine2" type="Line2D" parent="PlayerRaka" unique_id=1140348127]
+width = 3.0
+default_color = Color(1, 0.6, 0.1, 0.8)
+
+[node name="PlayerNisa" parent="." unique_id=614582445 instance=ExtResource("4_ferib")]
+position = Vector2(350, 660)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerNisa" unique_id=691605294]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_oodfx")
+
+[node name="Visuals2" type="Node2D" parent="PlayerNisa" unique_id=731574491]
+
+[node name="DashTrail2" type="Line2D" parent="PlayerNisa" unique_id=247143827]
+width = 6.0
+default_color = Color(0.45, 0.85, 0.75, 0.6)

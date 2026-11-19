@@ -1,0 +1,47 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player_raka.gd" id="1_a7mi5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvgif"]
+size = Vector2(24, 40)
+
+[node name="PlayerRaka" type="CharacterBody2D" unique_id=534366632]
+collision_layer = 2
+collision_mask = 47
+script = ExtResource("1_a7mi5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1329514394]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_hvgif")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=707944933]
+
+[node name="Body" type="ColorRect" parent="Visuals" unique_id=754722855]
+offset_left = -12.0
+offset_top = -40.0
+offset_right = 12.0
+color = Color(0.9, 0.49, 0.13, 1)
+
+[node name="Face" type="ColorRect" parent="Visuals" unique_id=1755845517]
+offset_left = 2.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = -26.0
+
+[node name="Pupil" type="ColorRect" parent="Visuals" unique_id=186786201]
+offset_left = 5.0
+offset_top = -31.0
+offset_right = 8.0
+offset_bottom = -27.0
+color = Color(0.2, 0.1, 0.05, 1)
+
+[node name="GauntletHand" type="ColorRect" parent="Visuals" unique_id=1913019987]
+offset_left = 6.0
+offset_top = -22.0
+offset_right = 16.0
+offset_bottom = -12.0
+color = Color(0.7, 0.3, 0.1, 1)
+
+[node name="GauntletLine" type="Line2D" parent="." unique_id=1140348127]
+width = 3.0
+default_color = Color(1, 0.6, 0.1, 0.8)

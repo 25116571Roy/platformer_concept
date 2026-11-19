@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://dj2mu43khdiby"]
+
+[ext_resource type="Script" uid="uid://cxgxnspk2cc0d" path="res://scripts/mechanics_test.gd" id="1_pxx56"]
+[ext_resource type="PackedScene" path="res://scenes/players/player_raka.tscn" id="2_o82qx"]
+[ext_resource type="PackedScene" path="res://scenes/players/player_nisa.tscn" id="4_so20e"]
+[ext_resource type="PackedScene" path="res://scenes/objects/gravity_stone.tscn" id="6_nyok0"]
+[ext_resource type="PackedScene" path="res://scenes/objects/light_object.tscn" id="8_on2lh"]
+[ext_resource type="PackedScene" path="res://scenes/objects/windmill.tscn" id="10_hh8q0"]
+[ext_resource type="PackedScene" path="res://scenes/objects/holdable_platform.tscn" id="12_dd5ey"]
+[ext_resource type="PackedScene" path="res://scenes/objects/vine_wall.tscn" id="14_3p5s3"]
+[ext_resource type="PackedScene" path="res://scenes/objects/gravity_switch.tscn" id="16_2k0dq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yha1r"]
+size = Vector2(1920, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw8ng"]
+size = Vector2(40, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u60f"]
+size = Vector2(40, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llxab"]
+size = Vector2(160, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evk18"]
+size = Vector2(160, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvgif"]
+size = Vector2(24, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oodfx"]
+size = Vector2(24, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d05cw"]
+size = Vector2(36, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86tax"]
+size = Vector2(28, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfk74"]
+radius = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phe5m"]
+size = Vector2(96, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u015"]
+size = Vector2(24, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybfct"]
+size = Vector2(40, 50)
+
+[node name="MechanicsTest" type="Node2D" unique_id=908501618]
+script = ExtResource("1_pxx56")
+
+[node name="Environment" type="Node2D" parent="." unique_id=1825731371]
+
+[node name="Background" type="ColorRect" parent="Environment" unique_id=1723044344]
+offset_right = 1920.0
+offset_bottom = 720.0
+color = Color(0.1, 0.14, 0.18, 1)
+
+[node name="Ground" type="StaticBody2D" parent="Environment" unique_id=1706210166]
+position = Vector2(960, 700)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground" unique_id=1467905201]
+shape = SubResource("RectangleShape2D_yha1r")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Ground" unique_id=31293698]
+offset_left = -960.0
+offset_top = -20.0
+offset_right = 960.0
+offset_bottom = 20.0
+color = Color(0.18, 0.28, 0.22, 1)
+
+[node name="LeftWall" type="StaticBody2D" parent="Environment" unique_id=1041155879]
+position = Vector2(20, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/LeftWall" unique_id=203149934]
+shape = SubResource("RectangleShape2D_bw8ng")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/LeftWall" unique_id=1130212311]
+offset_left = -20.0
+offset_top = -360.0
+offset_right = 20.0
+offset_bottom = 360.0
+color = Color(0.15, 0.2, 0.2, 1)
+
+[node name="RightWall" type="StaticBody2D" parent="Environment" unique_id=1704004347]
+position = Vector2(1900, 360)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RightWall" unique_id=672053042]
+shape = SubResource("RectangleShape2D_8u60f")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/RightWall" unique_id=1013977274]
+offset_left = -20.0
+offset_top = -360.0
+offset_right = 20.0
+offset_bottom = 360.0
+color = Color(0.15, 0.2, 0.2, 1)
+
+[node name="Ledge1" type="StaticBody2D" parent="Environment" unique_id=1040238822]
+position = Vector2(700, 480)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ledge1" unique_id=960186346]
+shape = SubResource("RectangleShape2D_llxab")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Ledge1" unique_id=2105490362]
+offset_left = -80.0
+offset_top = -12.0
+offset_right = 80.0
+offset_bottom = 12.0
+color = Color(0.25, 0.4, 0.3, 1)
+
+[node name="Ledge2" type="StaticBody2D" parent="Environment" unique_id=262820712]
+position = Vector2(1100, 420)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ledge2" unique_id=2143503339]
+shape = SubResource("RectangleShape2D_evk18")
+
+[node name="ColorRect" type="ColorRect" parent="Environment/Ledge2" unique_id=925496635]
+offset_left = -80.0
+offset_top = -12.0
+offset_right = 80.0
+offset_bottom = 12.0
+color = Color(0.25, 0.4, 0.3, 1)
+
+[node name="PlayerRaka" parent="." unique_id=534366632 instance=ExtResource("2_o82qx")]
+position = Vector2(120, 660)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerRaka" unique_id=1329514394]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_hvgif")
+
+[node name="Visuals2" type="Node2D" parent="PlayerRaka" unique_id=707944933]
+
+[node name="GauntletLine2" type="Line2D" parent="PlayerRaka" unique_id=1140348127]
+width = 3.0
+default_color = Color(1, 0.6, 0.1, 0.8)
+
+[node name="PlayerNisa" parent="." unique_id=614582445 instance=ExtResource("4_so20e")]
+position = Vector2(220, 660)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerNisa" unique_id=691605294]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_oodfx")
+
+[node name="Visuals2" type="Node2D" parent="PlayerNisa" unique_id=731574491]
+
+[node name="DashTrail2" type="Line2D" parent="PlayerNisa" unique_id=247143827]
+width = 6.0
+default_color = Color(0.45, 0.85, 0.75, 0.6)
+
+[node name="GravityStone" parent="." unique_id=857481887 instance=ExtResource("6_nyok0")]
+position = Vector2(280, 660)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GravityStone" unique_id=1021686463]
+shape = SubResource("RectangleShape2D_d05cw")
+
+[node name="Visuals2" type="Node2D" parent="GravityStone" unique_id=1149738820]
+
+[node name="LightObject" parent="." unique_id=1249757042 instance=ExtResource("8_on2lh")]
+position = Vector2(450, 660)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LightObject" unique_id=1793664542]
+shape = SubResource("RectangleShape2D_86tax")
+
+[node name="Visuals2" type="Node2D" parent="LightObject" unique_id=1679428233]
+
+[node name="Windmill" parent="." unique_id=1699525875 instance=ExtResource("10_hh8q0")]
+position = Vector2(620, 640)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Windmill" unique_id=1103410736]
+shape = SubResource("CircleShape2D_sfk74")
+
+[node name="Stand2" type="ColorRect" parent="Windmill" unique_id=1518394945]
+offset_left = -8.0
+offset_right = 8.0
+offset_bottom = 70.0
+color = Color(0.3, 0.22, 0.16, 1)
+
+[node name="Blades2" type="Node2D" parent="Windmill" unique_id=111403699]
+
+[node name="HoldablePlatform" parent="." unique_id=1545627218 instance=ExtResource("12_dd5ey")]
+position = Vector2(850, 660)
+move_offset = Vector2(0, -220)
+move_speed = 100.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HoldablePlatform" unique_id=612342238]
+shape = SubResource("RectangleShape2D_phe5m")
+
+[node name="Visuals2" type="Node2D" parent="HoldablePlatform" unique_id=2656339]
+
+[node name="VineWall" parent="." unique_id=1969740946 instance=ExtResource("14_3p5s3")]
+position = Vector2(1300, 630)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VineWall" unique_id=2121125301]
+shape = SubResource("RectangleShape2D_3u015")
+
+[node name="Visuals2" type="Node2D" parent="VineWall" unique_id=1987688508]
+
+[node name="GravitySwitch" parent="." unique_id=1391495434 instance=ExtResource("16_2k0dq")]
+position = Vector2(1600, 660)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GravitySwitch" unique_id=1384280963]
+shape = SubResource("RectangleShape2D_ybfct")
+
+[node name="Visuals2" type="Node2D" parent="GravitySwitch" unique_id=659909223]

@@ -1,0 +1,125 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/split_screen_controller.gd" id="1_y3mij"]
+[ext_resource type="Script" path="res://scripts/split_camera.gd" id="2_le0nu"]
+
+[node name="MainSplitScreen" type="Control" unique_id=1239657660]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_y3mij")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1880457212]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+
+[node name="SubViewportContainer1" type="SubViewportContainer" parent="HBoxContainer" unique_id=1401449868]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport1" type="SubViewport" parent="HBoxContainer/SubViewportContainer1" unique_id=606774307]
+handle_input_locally = false
+size = Vector2i(638, 720)
+
+[node name="CameraP1" type="Camera2D" parent="HBoxContainer/SubViewportContainer1/SubViewport1" unique_id=910448729]
+script = ExtResource("2_le0nu")
+
+[node name="Divider" type="ColorRect" parent="HBoxContainer" unique_id=803963390]
+custom_minimum_size = Vector2(4, 720)
+layout_mode = 2
+color = Color(0.08, 0.1, 0.12, 1)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer" unique_id=1759207939]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport2" type="SubViewport" parent="HBoxContainer/SubViewportContainer2" unique_id=139540172]
+handle_input_locally = false
+size = Vector2i(638, 720)
+
+[node name="CameraP2" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport2" unique_id=1497084592]
+script = ExtResource("2_le0nu")
+target_prefix = "p2_"
+
+[node name="DebugOverlay" type="CanvasLayer" parent="." unique_id=153794199]
+layer = 10
+visible = false
+
+[node name="Panel" type="Panel" parent="DebugOverlay" unique_id=841923435]
+offset_left = 16.0
+offset_top = 570.0
+offset_right = 516.0
+offset_bottom = 704.0
+
+[node name="DebugLabel" type="Label" parent="DebugOverlay/Panel" unique_id=497325436]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 492.0
+offset_bottom = 126.0
+text = "DEBUG INFO"
+
+[node name="PauseOverlay" type="CanvasLayer" parent="." unique_id=139103329]
+layer = 20
+visible = false
+
+[node name="Bg" type="ColorRect" parent="PauseOverlay" unique_id=323651623]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Box" type="VBoxContainer" parent="PauseOverlay" unique_id=187764331]
+offset_left = 490.0
+offset_top = 260.0
+offset_right = 790.0
+offset_bottom = 460.0
+
+[node name="Title" type="Label" parent="PauseOverlay/Box" unique_id=808188829]
+layout_mode = 2
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseOverlay/Box" unique_id=427892938]
+layout_mode = 2
+text = "Resume (Esc)"
+
+[node name="RestartButton" type="Button" parent="PauseOverlay/Box" unique_id=867242945]
+layout_mode = 2
+text = "Restart Level"
+
+[node name="CompleteOverlay" type="CanvasLayer" parent="." unique_id=2080439428]
+layer = 25
+visible = false
+
+[node name="Bg" type="ColorRect" parent="CompleteOverlay" unique_id=1674431224]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.15, 0.1, 0.85)
+
+[node name="Box" type="VBoxContainer" parent="CompleteOverlay" unique_id=556680186]
+offset_left = 440.0
+offset_top = 240.0
+offset_right = 840.0
+offset_bottom = 480.0
+
+[node name="Title" type="Label" parent="CompleteOverlay/Box" unique_id=481865550]
+layout_mode = 2
+text = "LEVEL COMPLETE!"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="CompleteOverlay/Box" unique_id=1309684632]
+layout_mode = 2
+text = "Both heroes have returned together.
+Jejak Asa: Dua Arah Pulang."
+horizontal_alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="CompleteOverlay/Box" unique_id=1185761898]
+layout_mode = 2
+text = "Play Again (R)"

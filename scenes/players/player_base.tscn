@@ -1,0 +1,36 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player_base.gd" id="1_mg6dd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et4ps"]
+size = Vector2(24, 40)
+
+[node name="PlayerBase" type="CharacterBody2D" unique_id=344118724]
+collision_layer = 2
+collision_mask = 47
+script = ExtResource("1_mg6dd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1885096301]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_et4ps")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=827453960]
+
+[node name="Body" type="ColorRect" parent="Visuals" unique_id=955273785]
+offset_left = -12.0
+offset_top = -40.0
+offset_right = 12.0
+color = Color(0.7, 0.7, 0.7, 1)
+
+[node name="Face" type="ColorRect" parent="Visuals" unique_id=148678181]
+offset_left = 2.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = -26.0
+
+[node name="Pupil" type="ColorRect" parent="Visuals" unique_id=625758842]
+offset_left = 5.0
+offset_top = -31.0
+offset_right = 8.0
+offset_bottom = -27.0
+color = Color(0, 0, 0, 1)

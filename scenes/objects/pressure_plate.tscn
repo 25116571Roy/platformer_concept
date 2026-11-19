@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/pressure_plate.gd" id="1_mayf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elfid"]
+size = Vector2(56, 16)
+
+[node name="PressurePlate" type="Area2D" unique_id=1434948814]
+script = ExtResource("1_mayf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1980827686]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_elfid")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=1359872404]
+
+[node name="Base" type="ColorRect" parent="Visuals" unique_id=1691365292]
+offset_left = -32.0
+offset_top = -6.0
+offset_right = 32.0
+color = Color(0.2, 0.22, 0.28, 1)
+
+[node name="Plate" type="ColorRect" parent="Visuals" unique_id=1374677883]
+offset_left = -26.0
+offset_top = -8.0
+offset_right = 26.0
+color = Color(0.5, 0.45, 0.4, 1)
+
+[node name="Glow" type="ColorRect" parent="Visuals" unique_id=1371282045]
+visible = false
+offset_left = -24.0
+offset_top = -7.0
+offset_right = 24.0
+offset_bottom = -1.0
+color = Color(0.2, 0.85, 0.8, 0.9)

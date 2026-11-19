@@ -1,0 +1,46 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_emaeu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82kmp"]
+size = Vector2(28, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2f8i"]
+size = Vector2(32, 22)
+
+[node name="Slime" type="CharacterBody2D" unique_id=823725211]
+script = ExtResource("1_emaeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045017512]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_82kmp")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=790723195]
+
+[node name="Body" type="ColorRect" parent="Visuals" unique_id=1912114415]
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 14.0
+color = Color(0.18, 0.8, 0.35, 1)
+
+[node name="Highlight" type="ColorRect" parent="Visuals" unique_id=240467857]
+offset_left = -10.0
+offset_top = -18.0
+offset_right = -2.0
+offset_bottom = -12.0
+color = Color(0.5, 0.95, 0.6, 1)
+
+[node name="Eye" type="ColorRect" parent="Visuals" unique_id=1998156542]
+offset_left = 3.0
+offset_top = -14.0
+offset_right = 7.0
+offset_bottom = -9.0
+color = Color(0.05, 0.25, 0.1, 1)
+
+[node name="HazardArea" type="Area2D" parent="." unique_id=938550770]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea" unique_id=1521796919]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_q2f8i")

@@ -1,0 +1,58 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/windmill.gd" id="1_n2tk8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfk74"]
+radius = 48.0
+
+[node name="Windmill" type="Area2D" unique_id=1699525875]
+script = ExtResource("1_n2tk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1103410736]
+shape = SubResource("CircleShape2D_sfk74")
+
+[node name="Stand" type="ColorRect" parent="." unique_id=1518394945]
+offset_left = -8.0
+offset_right = 8.0
+offset_bottom = 70.0
+color = Color(0.3, 0.22, 0.16, 1)
+
+[node name="Blades" type="Node2D" parent="." unique_id=111403699]
+
+[node name="Blade0" type="ColorRect" parent="Blades" unique_id=1157936630]
+offset_left = -6.0
+offset_top = -44.0
+offset_right = 6.0
+pivot_offset = Vector2(6, 44)
+color = Color(0.85, 0.88, 0.9, 1)
+
+[node name="Blade1" type="ColorRect" parent="Blades" unique_id=999814242]
+offset_left = -6.0
+offset_top = -44.0
+offset_right = 6.0
+rotation = 1.5707964
+pivot_offset = Vector2(6, 44)
+color = Color(0.85, 0.88, 0.9, 1)
+
+[node name="Blade2" type="ColorRect" parent="Blades" unique_id=657166751]
+offset_left = -6.0
+offset_top = -44.0
+offset_right = 6.0
+rotation = 3.1415927
+pivot_offset = Vector2(6, 44)
+color = Color(0.85, 0.88, 0.9, 1)
+
+[node name="Blade3" type="ColorRect" parent="Blades" unique_id=798706675]
+offset_left = -6.0
+offset_top = -44.0
+offset_right = 6.0
+rotation = 4.712389
+pivot_offset = Vector2(6, 44)
+color = Color(0.85, 0.88, 0.9, 1)
+
+[node name="CenterPin" type="ColorRect" parent="Blades" unique_id=2061731021]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+color = Color(0.2, 0.5, 0.45, 1)

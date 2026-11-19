@@ -1,0 +1,49 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/vine_wall.gd" id="1_lduco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u015"]
+size = Vector2(24, 96)
+
+[node name="VineWall" type="StaticBody2D" unique_id=1969740946]
+script = ExtResource("1_lduco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2121125301]
+shape = SubResource("RectangleShape2D_3u015")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=1987688508]
+
+[node name="VineBg" type="ColorRect" parent="Visuals" unique_id=721788041]
+offset_left = -12.0
+offset_top = -48.0
+offset_right = 12.0
+offset_bottom = 48.0
+color = Color(0.2, 0.5, 0.25, 1)
+
+[node name="Leaf0" type="ColorRect" parent="Visuals" unique_id=1903784667]
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 16.0
+offset_bottom = -30.0
+color = Color(0.35, 0.68, 0.3, 1)
+
+[node name="Leaf1" type="ColorRect" parent="Visuals" unique_id=859119890]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = -6.0
+color = Color(0.35, 0.68, 0.3, 1)
+
+[node name="Leaf2" type="ColorRect" parent="Visuals" unique_id=1547748293]
+offset_left = -16.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+color = Color(0.35, 0.68, 0.3, 1)
+
+[node name="Leaf3" type="ColorRect" parent="Visuals" unique_id=1430856857]
+offset_left = -16.0
+offset_top = 32.0
+offset_right = 16.0
+offset_bottom = 42.0
+color = Color(0.35, 0.68, 0.3, 1)

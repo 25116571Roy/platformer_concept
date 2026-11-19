@@ -1,0 +1,70 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player_hud.gd" id="1_e6e0b"]
+
+[node name="PlayerHUD" type="CanvasLayer" unique_id=1271738603]
+script = ExtResource("1_e6e0b")
+
+[node name="Root" type="Control" parent="." unique_id=560798008]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="TopBar" type="HBoxContainer" parent="Root" unique_id=770655564]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 616.0
+offset_bottom = 46.0
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="Root/TopBar" unique_id=1191952819]
+layout_mode = 2
+text = "PLAYER"
+
+[node name="Spacer" type="Control" parent="Root/TopBar" unique_id=1161489118]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="AbilityBar1" type="ProgressBar" parent="Root/TopBar" unique_id=734105510]
+custom_minimum_size = Vector2(120, 24)
+layout_mode = 2
+show_percentage = false
+
+[node name="Label" type="Label" parent="Root/TopBar/AbilityBar1" unique_id=162603351]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "ABILITY 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AbilityBar2" type="ProgressBar" parent="Root/TopBar" unique_id=264864699]
+custom_minimum_size = Vector2(120, 24)
+layout_mode = 2
+show_percentage = false
+
+[node name="Label" type="Label" parent="Root/TopBar/AbilityBar2" unique_id=98097726]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "ABILITY 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OffscreenIndicator" type="Node2D" parent="Root" unique_id=276149364]
+visible = false
+
+[node name="Arrow" type="Polygon2D" parent="Root/OffscreenIndicator" unique_id=1490622943]
+polygon = PackedVector2Array(-14, -10, 14, 0, -14, 10)
+
+[node name="DistanceLabel" type="Label" parent="Root/OffscreenIndicator" unique_id=292645699]
+offset_left = -30.0
+offset_top = 12.0
+offset_right = -30.0
+offset_bottom = 12.0
+text = "300px"
+horizontal_alignment = 1

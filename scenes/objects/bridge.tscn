@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/bridge.gd" id="1_vpbpc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pexfk"]
+size = Vector2(220, 20)
+
+[node name="Bridge" type="AnimatableBody2D" unique_id=448923549]
+script = ExtResource("1_vpbpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580559873]
+position = Vector2(110, -10)
+shape = SubResource("RectangleShape2D_pexfk")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=670065957]
+
+[node name="Plank" type="ColorRect" parent="Visuals" unique_id=618609547]
+offset_top = -20.0
+offset_right = 220.0
+color = Color(0.48, 0.34, 0.22, 1)

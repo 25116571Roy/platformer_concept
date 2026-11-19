@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/wind_current.gd" id="1_qw82k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlsa8"]
+size = Vector2(80, 80)
+
+[node name="WindCurrent" type="Area2D" unique_id=1785356887]
+script = ExtResource("1_qw82k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1637757855]
+shape = SubResource("RectangleShape2D_nlsa8")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=1098595843]
+
+[node name="BreezeBg" type="ColorRect" parent="Visuals" unique_id=208005465]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.4, 0.9, 0.8, 0.2)
+
+[node name="Streak0" type="ColorRect" parent="Visuals" unique_id=1664926951]
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 15.0
+offset_bottom = -21.0
+color = Color(0.8, 1, 0.95, 0.7)
+
+[node name="Streak1" type="ColorRect" parent="Visuals" unique_id=1739299263]
+offset_left = -10.0
+offset_right = 35.0
+offset_bottom = 5.0
+color = Color(0.8, 1, 0.95, 0.7)
+
+[node name="Streak2" type="ColorRect" parent="Visuals" unique_id=1248093264]
+offset_left = -30.0
+offset_top = 25.0
+offset_bottom = 29.0
+color = Color(0.8, 1, 0.95, 0.7)

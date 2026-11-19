@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/holdable_platform.gd" id="1_i1tfr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phe5m"]
+size = Vector2(96, 20)
+
+[node name="HoldablePlatform" type="AnimatableBody2D" unique_id=1545627218]
+script = ExtResource("1_i1tfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612342238]
+shape = SubResource("RectangleShape2D_phe5m")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=2656339]
+
+[node name="Body" type="ColorRect" parent="Visuals" unique_id=1620810055]
+offset_left = -48.0
+offset_top = -10.0
+offset_right = 48.0
+offset_bottom = 10.0
+color = Color(0.35, 0.4, 0.45, 1)
+
+[node name="HoldAura" type="ColorRect" parent="Visuals" unique_id=1166929449]
+visible = false
+offset_left = -52.0
+offset_top = -14.0
+offset_right = 52.0
+offset_bottom = 14.0
+color = Color(1, 0.6, 0.1, 0.4)
